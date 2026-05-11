@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Mastery Cheat Sheet</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.5;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f6f8fa;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid #e1e4e8;
+        }
+        header {
+            background-color: #24292e;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        h1 { margin: 0; font-size: 28px; }
+        p.subtitle { margin: 10px 0 0 0; opacity: 0.8; font-size: 18px; }
+        h2 { 
+            color: #0366d6; 
+            border-bottom: 2px solid #eaecef; 
+            padding-bottom: 8px; 
+            font-size: 20px;
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        th { 
+            background-color: #f8f9fa; 
+            width: 35%;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f3f3f3;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #d73a49;
+            font-size: 0.95em;
+        }
+        .pro-tip {
+            background-color: #fffbdd;
+            border: 1px solid #d4c05e;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 13px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Git Mastery Cheat Sheet</h1>
+            <p class="subtitle">Essential Commands for Professional Workflows</p>
+        </header>
+
+        <h2>1. Repository Setup & Configuration</h2>
+        <table>
+            <tr><th><code>git init</code></th><td>Initializes a new local Git repository in the current folder.</td></tr>
+            <tr><th><code>git remote add origin [URL]</code></th><td>Links your local repository to a remote server (GitHub).</td></tr>
+            <tr><th><code>git remote -v</code></th><td>Verifies the connection to the remote repository.</td></tr>
+            <tr><th><code>git branch -M main</code></th><td>Renames the default branch to 'main'.</td></tr>
+        </table>
+
+        <h2>2. Staging & Committing</h2>
+        <table>
+            <tr><th><code>git status</code></th><td>Shows the state of the working directory and staged files.</td></tr>
+            <tr><th><code>git add .</code></th><td>Adds all modified and new files to the staging area.</td></tr>
+            <tr><th><code>git commit -m "[message]"</code></th><td>Saves the staged snapshot with a descriptive message.</td></tr>
+        </table>
+
+        <h2>3. Branching & Merging</h2>
+        <table>
+            <tr><th><code>git branch</code></th><td>Lists all local branches in the repository.</td></tr>
+            <tr><th><code>git checkout -b [name]</code></th><td>Creates a new branch and switches to it immediately.</td></tr>
+            <tr><th><code>git checkout [name]</code></th><td>Switches back to an existing branch (e.g., main).</td></tr>
+            <tr><th><code>git merge [name]</code></th><td>Integrates changes from the specified branch into the current one.</td></tr>
+        </table>
+
+        <h2>4. Remote Operations & Syncing</h2>
+        <table>
+            <tr><th><code>git push -u origin main</code></th><td>Uploads local commits to GitHub for the first time.</td></tr>
+            <tr><th><code>git push</code></th><td>Uploads subsequent commits to the remote repository.</td></tr>
+            <tr><th><code>git pull</code></th><td>Fetches and integrates changes from the remote repo to local.</td></tr>
+        </table>
+
+
+        <footer>
+            Assignment: AI-Assisted Development and Git Mastery | Quick Reference Guide
+        </footer>
+    </div>
+</body>
+</html>
