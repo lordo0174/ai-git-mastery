@@ -3,124 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git Mastery Cheat Sheet</title>
+    <title>Java Terminal Emulator - Expense Tracker</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            line-height: 1.5;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #f6f8fa;
-        }
-        .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border: 1px solid #e1e4e8;
-        }
-        header {
-            background-color: #24292e;
-            color: white;
-            padding: 30px;
-            text-align: center;
-            border-radius: 6px;
-            margin-bottom: 30px;
-        }
-        h1 { margin: 0; font-size: 28px; }
-        p.subtitle { margin: 10px 0 0 0; opacity: 0.8; font-size: 18px; }
-        h2 { 
-            color: #0366d6; 
-            border-bottom: 2px solid #eaecef; 
-            padding-bottom: 8px; 
-            font-size: 20px;
-            margin-top: 30px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #eee;
-        }
-        th { 
-            background-color: #f8f9fa; 
-            width: 35%;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        code {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #f3f3f3;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-weight: bold;
-            color: #d73a49;
-            font-size: 0.95em;
-        }
-        .pro-tip {
-            background-color: #fffbdd;
-            border: 1px solid #d4c05e;
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 6px;
-            font-size: 15px;
-        }
-        footer {
-            margin-top: 40px;
-            font-size: 13px;
-            text-align: center;
-            color: #666;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-        }
+        body { font-family: 'Courier New', Courier, monospace; background-color: #1a1a1a; color: #00ff00; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .terminal { background-color: #000; border: 2px solid #333; width: 100%; max-width: 700px; height: 450px; padding: 20px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); overflow-y: auto; display: flex; flex-direction: column; }
+        .output { white-space: pre-wrap; margin-bottom: 10px; flex-grow: 1; }
+        .input-line { display: flex; color: #fff; }
+        input { background: transparent; border: none; color: #00ff00; font-family: inherit; font-size: inherit; outline: none; flex-grow: 1; margin-left: 10px; }
+        .header { text-align: center; color: #fff; margin-bottom: 20px; }
+        .info { color: #888; font-size: 0.8em; margin-top: 15px; }
+        .highlight { color: #fbff00; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Git Mastery Cheat Sheet</h1>
-            <p class="subtitle">Essential Commands for Professional Workflows</p>
-        </header>
 
-        <h2>1. Repository Setup & Configuration</h2>
-        <table>
-            <tr><th><code>git init</code></th><td>Initializes a new local Git repository in the current folder.</td></tr>
-            <tr><th><code>git remote add origin [URL]</code></th><td>Links your local repository to a remote server (GitHub).</td></tr>
-            <tr><th><code>git remote -v</code></th><td>Verifies the connection to the remote repository.</td></tr>
-            <tr><th><code>git branch -M main</code></th><td>Renames the default branch to 'main'.</td></tr>
-        </table>
-
-        <h2>2. Staging & Committing</h2>
-        <table>
-            <tr><th><code>git status</code></th><td>Shows the state of the working directory and staged files.</td></tr>
-            <tr><th><code>git add .</code></th><td>Adds all modified and new files to the staging area.</td></tr>
-            <tr><th><code>git commit -m "[message]"</code></th><td>Saves the staged snapshot with a descriptive message.</td></tr>
-        </table>
-
-        <h2>3. Branching & Merging</h2>
-        <table>
-            <tr><th><code>git branch</code></th><td>Lists all local branches in the repository.</td></tr>
-            <tr><th><code>git checkout -b [name]</code></th><td>Creates a new branch and switches to it immediately.</td></tr>
-            <tr><th><code>git checkout [name]</code></th><td>Switches back to an existing branch (e.g., main).</td></tr>
-            <tr><th><code>git merge [name]</code></th><td>Integrates changes from the specified branch into the current one.</td></tr>
-        </table>
-
-        <h2>4. Remote Operations & Syncing</h2>
-        <table>
-            <tr><th><code>git push -u origin main</code></th><td>Uploads local commits to GitHub for the first time.</td></tr>
-            <tr><th><code>git push</code></th><td>Uploads subsequent commits to the remote repository.</td></tr>
-            <tr><th><code>git pull</code></th><td>Fetches and integrates changes from the remote repo to local.</td></tr>
-        </table>
-
-
-        <footer>
-            Assignment: AI-Assisted Development and Git Mastery | Quick Reference Guide
-        </footer>
+    <div class="header">
+        <h1>Java Console Emulator</h1>
+        <p>Project: <strong>GestorGastos.java</strong> (AI-Assisted)</p>
     </div>
+
+    <div class="terminal" onclick="document.getElementById('user-input').focus()">
+        <div id="output" class="output">Welcome to the Expense Tracker CLI...
+Type 1, 2, 3, or 4 to interact.
+
+--- MI GESTOR DE GASTOS ---
+1. Añadir gasto
+2. Ver lista de gastos
+3. <span class="highlight">Calcular TOTAL gastado</span>
+4. Salir</div>
+        <div class="input-line">
+            <span>Selection:></span>
+            <input type="text" id="user-input" autofocus autocomplete="off">
+        </div>
+    </div>
+
+    <div class="info">
+        Note: This is a JavaScript simulation of the Java source code managed via Git.
+    </div>
+
+    <script>
+        const output = document.getElementById('output');
+        const input = document.getElementById('user-input');
+        
+        let gastos = []; // {concepto: string, monto: number}
+        let state = "MENU"; // MENU, ADD_DESC, ADD_AMOUNT
+
+        const menuText = `\n--- MI GESTOR DE GASTOS ---
+1. Añadir gasto
+2. Ver lista de gastos
+3. <span class="highlight">Calcular TOTAL gastado</span>
+4. Salir`;
+
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                const val = input.value.trim();
+                processInput(val);
+                input.value = '';
+                output.scrollTop = output.scrollHeight;
+            }
+        });
+
+        function print(text) {
+            output.innerHTML += `\n${text}`;
+        }
+
+        function processInput(val) {
+            if (state === "MENU") {
+                if (val === "1") {
+                    print(`Selection:> 1\nConcepto:`);
+                    state = "ADD_DESC";
+                } else if (val === "2") {
+                    print(`Selection:> 2\n--- Lista de Gastos ---`);
+                    if (gastos.length === 0) print("No hay gastos registrados.");
+                    gastos.forEach(g => print(`- ${g.concepto}: $${g.monto}`));
+                    print(menuText);
+                } else if (val === "3") {
+                    print(`Selection:> 3\n--------------------------`);
+                    let total = gastos.reduce((acc, curr) => acc + curr.monto, 0);
+                    print(`TOTAL GASTADO: $${total.toFixed(2)}`);
+                    print(`--------------------------`);
+                    print(menuText);
+                } else if (val === "4") {
+                    print(`Selection:> 4\nCerrando programa... ¡Adiós!`);
+                    input.disabled = true;
+                } else {
+                    print("Opción no válida.");
+                    print(menuText);
+                }
+            } else if (state === "ADD_DESC") {
+                window.tempDesc = val;
+                print(val);
+                print("Monto:");
+                state = "ADD_AMOUNT";
+            } else if (state === "ADD_AMOUNT") {
+                let monto = parseFloat(val);
+                if (!isNaN(monto)) {
+                    print(val);
+                    gastos.push({concepto: window.tempDesc, monto: monto});
+                    print("¡Gasto guardado!");
+                } else {
+                    print("Monto inválido.");
+                }
+                state = "MENU";
+                print(menuText);
+            }
+        }
+    </script>
 </body>
 </html>
